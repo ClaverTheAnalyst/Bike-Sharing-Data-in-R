@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>b66d7b9b57974a66b55e76456302a0b1</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p>options(repos = list(CRAN="hhtp://cran.studio.com/@))</p>
+<p><strong>#BIKE SHARING COMPANY - CHICAGO</strong></p>
+<p>##Claver Portfolio &amp; Capstone Project ##Introduction</p>
+<p>###This notebook contains the first case study of Google’s Data Analytics Professional Certificate. The case study requires the analyst to follow to the steps of the data analysis process (ask, prepare, process, analyze, share,and act) for a dataset that represents a fictional company (Cyclistic Bike-Share).</p>
+<p>##Install and Load Packages</p>
+<pre class="{r}"><code>install.packages(&quot;tidyverse&quot;)
+install.packages(&quot;lubridate&quot;)
+install.packages(&quot;ggplot2&quot;)
+library(tidyverse)
+library(lubridate)
+library(ggplot2)</code></pre>
+<p>##Load Datasets</p>
+<pre class="{r}"><code>april_2021 &lt;- read_csv(&quot;april_2021.csv&quot;)
+august_2020 &lt;- read_csv(&quot;August_2020.csv&quot;)
+december_2020 &lt;- read_csv(&quot;december_2020.csv&quot;)
+february_2021 &lt;- read_csv(&quot;february_2021.csv&quot;)
+january_2021 &lt;- read_csv(&quot;january_2021.csv&quot;)
+july_2020 &lt;- read_csv(&quot;July_2020.csv&quot;)
+july_2021 &lt;- read_csv(&quot;july_2021.csv&quot;)
+june_2020 &lt;- read_csv(&quot;June_2020.csv&quot;)
+june2_2020 &lt;- read_csv(&quot;june_2020.csv&quot;)
+june_2021 &lt;- read_csv(&quot;june_2021.csv&quot;)
+march_2021 &lt;- read_csv(&quot;march_2021.csv&quot;)
+may_2021 &lt;- read_csv(&quot;may_2021.csv&quot;)
+november_2020 &lt;- read_csv(&quot;november_2020.csv&quot;)
+october_2020 &lt;- read_csv(&quot;October_2020.csv&quot;)
+september_2020 &lt;- read_csv(&quot;September_2020.csv&quot;)
+str(september_2020)
+colnames(july_2020)</code></pre>
+<p>##Convert necessary columns for better analysis and cleaning</p>
+<pre class="{r}"><code>april_2021 &lt;-  mutate(april_2021, start_station_id = as.character(start_station_id)
+                             ,end_station_id = as.character(end_station_id)
+                             ,started_at= as.POSIXct(started_at, format= &quot;%m/%d/%Y %H:%M&quot;)
+                             ,ended_at= as.POSIXct(ended_at, format= &quot;%m/%d/%Y %H:%M&quot;))
+august_2020 &lt;-  mutate(august_2020, start_station_id = as.character(start_station_id)
+                             ,end_station_id = as.character(end_station_id)
+                             ,started_at= as.POSIXct(started_at, format= &quot;%m/%d/%Y %H:%M&quot;)
+                             ,ended_at= as.POSIXct(ended_at, format= &quot;%m/%d/%Y %H:%M&quot;))
+december_2020 &lt;-  mutate(december_2020, start_station_id = as.character(start_station_id)
+                             ,end_station_id = as.character(end_station_id)
+                             ,started_at= as.POSIXct(started_at, format= &quot;%m/%d/%Y %H:%M&quot;)
+                             ,ended_at= as.POSIXct(ended_at, format= &quot;%m/%d/%Y %H:%M&quot;))
+february_2021 &lt;-  mutate(february_2021, start_station_id = as.character(start_station_id)
+                             ,end_station_id = as.character(end_station_id)
+                             ,started_at= as.POSIXct(started_at, format= &quot;%m/%d/%Y %H:%M&quot;)
+                             ,ended_at= as.POSIXct(ended_at, format= &quot;%m/%d/%Y %H:%M&quot;))
+january_2021 &lt;-  mutate(january_2021, start_station_id = as.character(start_station_id)
+                             ,end_station_id = as.character(end_station_id)
+                             ,started_at= as.POSIXct(started_at, format= &quot;%m/%d/%Y %H:%M&quot;)
+                             ,ended_at= as.POSIXct(ended_at, format= &quot;%m/%d/%Y %H:%M&quot;))
+march_2021 &lt;-  mutate(march_2021, start_station_id = as.character(start_station_id)
+                             ,end_station_id = as.character(end_station_id)
+                             ,started_at= as.POSIXct(started_at, format= &quot;%m/%d/%Y %H:%M&quot;)
+                             ,ended_at= as.POSIXct(ended_at, format= &quot;%m/%d/%Y %H:%M&quot;))
+february_2021 &lt;-  mutate(february_2021, start_station_id = as.character(start_station_id)
+                             ,end_station_id = as.character(end_station_id)
+                             ,started_at= as.POSIXct(started_at, format= &quot;%m/%d/%Y %H:%M&quot;)
+                             ,ended_at= as.POSIXct(ended_at, format= &quot;%m/%d/%Y %H:%M&quot;))
+may_2021 &lt;-  mutate(may_2021, start_station_id = as.character(start_station_id)
+                             ,end_station_id = as.character(end_station_id)
+                             ,started_at= as.POSIXct(started_at, format= &quot;%m/%d/%Y %H:%M&quot;)
+                             ,ended_at= as.POSIXct(ended_at, format= &quot;%m/%d/%Y %H:%M&quot;))
+june_2021 &lt;-  mutate(june_2021, start_station_id = as.character(start_station_id)
+                             ,end_station_id = as.character(end_station_id)
+                             ,started_at= as.POSIXct(started_at, format= &quot;%m/%d/%Y %H:%M&quot;)
+                             ,ended_at= as.POSIXct(ended_at, format= &quot;%m/%d/%Y %H:%M&quot;))
+july_2021 &lt;-  mutate(july_2021, start_station_id = as.character(start_station_id)
+                             ,end_station_id = as.character(end_station_id)
+                             ,started_at= as.POSIXct(started_at, format= &quot;%m/%d/%Y %H:%M&quot;)
+                             ,ended_at= as.POSIXct(ended_at, format= &quot;%m/%d/%Y %H:%M&quot;))
+july_2020 &lt;-  mutate(july_2020, start_station_id = as.character(start_station_id)
+                             ,end_station_id = as.character(end_station_id)
+                             ,started_at= as.POSIXct(started_at, format= &quot;%m/%d/%Y %H:%M&quot;)
+                             ,ended_at= as.POSIXct(ended_at, format= &quot;%m/%d/%Y %H:%M&quot;))
+june_2020 &lt;-  mutate(june_2020, start_station_id = as.character(start_station_id)
+                              ,end_station_id = as.character(end_station_id)
+                              ,started_at= as.POSIXct(started_at, format= &quot;%m/%d/%Y %H:%M&quot;)
+                              ,ended_at= as.POSIXct(ended_at, format= &quot;%m/%d/%Y %H:%M&quot;))
+november_2020 &lt;-  mutate(november_2020, start_station_id = as.character(start_station_id)
+                     ,end_station_id = as.character(end_station_id)
+                     ,started_at= as.POSIXct(started_at, format= &quot;%m/%d/%Y %H:%M&quot;)
+                     ,ended_at= as.POSIXct(ended_at, format= &quot;%m/%d/%Y %H:%M&quot;))
+october_2020 &lt;-  mutate(october_2020, start_station_id = as.character(start_station_id)
+                     ,end_station_id = as.character(end_station_id)
+                     ,started_at= as.POSIXct(started_at, format= &quot;%m/%d/%Y %H:%M&quot;)
+                     ,ended_at= as.POSIXct(ended_at, format= &quot;%m/%d/%Y %H:%M&quot;))
+september_2020 &lt;-  mutate(september_2020, start_station_id = as.character(start_station_id)
+                     ,end_station_id = as.character(end_station_id)
+                     ,started_at= as.POSIXct(started_at, format= &quot;%m/%d/%Y %H:%M&quot;)
+                     ,ended_at= as.POSIXct(ended_at, format= &quot;%m/%d/%Y %H:%M&quot;))
+june2_2020 &lt;-  mutate(june2_2020, start_station_id = as.character(start_station_id)
+                          ,end_station_id = as.character(end_station_id)
+                          ,started_at= as.POSIXct(started_at, format= &quot;%m/%d/%Y %H:%M&quot;)
+                          ,ended_at= as.POSIXct(ended_at, format= &quot;%m/%d/%Y %H:%M&quot;))</code></pre>
+<p>##Went on to join all the months’ data frames into one</p>
+<pre class="{r}"><code>all_trips &lt;- bind_rows(april_2021, august_2020, december_2020, 
+                       january_2021, february_2021, march_2021,
+                       april_2021, may_2021, june_2021,
+                       july_2021, july_2020, june_2020, june2_2020, november_2020, october_2020, september_2020)
+
+
+all_trips &lt;- all_trips %&gt;% 
+  select(-c(start_lat, start_lng, end_lat, end_lng))</code></pre>
+<p>##We clean and arrange our data to make it ready for analysis</p>
+<pre class="{r}"><code>head(all_trips)
+
+glimpse(all_trips)
+
+colSums(is.na(all_trips))
+
+all_trips_cleaned &lt;- all_trips[complete.cases(all_trips), ]
+
+all_trips_cleaned &lt;- all_trips_cleaned %&gt;% 
+  filter(all_trips_cleaned$started_at &lt; all_trips_cleaned$ended_at)
+
+all_trips_cleaned$date &lt;- as.Date(all_trips_cleaned$started_at, format= &quot;%m/%d/%Y %H:%M&quot;)
+all_trips_cleaned$month &lt;- format(as.Date(all_trips_cleaned$date), &quot;%m&quot;)
+all_trips_cleaned$day &lt;- format(as.Date(all_trips_cleaned$date), &quot;%d&quot;)
+all_trips_cleaned$year &lt;- format(as.Date(all_trips_cleaned$date), &quot;%Y&quot;)
+all_trips_cleaned$day_of_week &lt;- format(as.Date(all_trips_cleaned$date), &quot;%A&quot;)
+
+glimpse(all_trips_cleaned)</code></pre>
+<p>##Create a new column that has the calculated length of each ride</p>
+<pre class="{r}"><code>all_trips_cleaned$ride_length &lt;- difftime(all_trips_cleaned$ended_at, 
+                                          all_trips_cleaned$started_at)
+
+str(all_trips_cleaned)
+all_trips_cleaned$ride_length &lt;- difftime(all_trips_cleaned$ended_at, 
+                                          all_trips_cleaned$started_at)
+
+is.factor(all_trips_cleaned$ride_length)
+
+all_trips_cleaned$ride_length &lt;- as.numeric(as.character(all_trips_cleaned$ride_length))
+is.numeric(all_trips_cleaned$ride_length)
+
+all_trips_v2 &lt;- all_trips_cleaned[!(all_trips_cleaned$start_station_name == &quot;HQ QR&quot; | all_trips_cleaned$ride_length&lt;0),]</code></pre>
+<p>##Did an analysis to get the mean, sum, average and summary of the ride lengths</p>
+<pre class="{r}"><code>mean(all_trips_v2$ride_length)
+median(all_trips_v2$ride_length)
+summary(all_trips_v2$ride_length)
+
+aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual, FUN = mean)
+aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual, FUN = median)
+aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual, FUN = max)
+aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual, FUN = min)
+
+all_trips_v2$day_of_week &lt;- ordered(all_trips_v2$day_of_week, levels=c(&quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;))
+
+aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual + all_trips_v2$day_of_week, FUN = mean)
+
+all_trips_v2 %&gt;% 
+  mutate(weekday = wday(started_at, label = TRUE)) %&gt;%  #creates weekday field using wday()
+  group_by(member_casual, weekday) %&gt;%  #groups by usertype and weekday
+  summarise(number_of_rides = n()                            #calculates the number of rides and average duration 
+            ,average_duration = mean(ride_length)) %&gt;%         # calculates the average duration
+  arrange(member_casual, weekday)  
+
+all_trips_v2 %&gt;% 
+  group_by(member_casual, day_of_week) %&gt;% 
+  summarise(number_of_rides = n(), .groups = &#39;drop&#39;) %&gt;% 
+  #arrange(member_casual, day_of_week) %&gt;% 
+  ggplot(aes(x = day_of_week, y = number_of_rides, ,fill = member_casual)) +
+  geom_col(position = &quot;dodge&quot;) + scale_y_continuous(labels = scales::comma) +
+  labs(x = &quot;Day of Week&quot;, y = &quot;Number of Rides&quot;, fill = &quot;Member/Casual&quot;,
+       title = &quot;Average Number of Rides by Day: Members vs. Casual Riders&quot;)</code></pre>
+<p>##Analyse the data based on ride type and day of riding</p>
+<pre class="{r}"><code>install.packages(&quot;tidyverse&quot;)
+install.packages(&quot;ggplot2&quot;)
+install.packages(&quot;lubridate&quot;)
+
+glimpse(all_trips_cleaned)
+
+all_trips_v2 %&gt;% 
+  group_by(member_casual, day_of_week) %&gt;% 
+  summarise(average_duration = mean(ride_length), .groups = &#39;drop&#39;) %&gt;% 
+  #arrange(member_casual, day_of_week) %&gt;% 
+  ggplot(aes(x = day_of_week, y = average_duration, fill = member_casual)) +
+  geom_col(position = &quot;dodge&quot;) +
+  labs(x = &quot;Day of Week&quot;, y = &quot;Average Duration (min)&quot;, 
+       fill = &quot;Member/Casual&quot;,
+       title = &quot;Average Riding Duration by Day: Members vs. Casual Riders&quot;)</code></pre>
+<p>##Visualize the number of rides by rider category</p>
+<pre class="{r}"><code>all_trips_v2 %&gt;% 
+  group_by(member_casual, day_of_week) %&gt;% 
+  summarise(number_of_rides = n(), .groups = &#39;drop&#39;) %&gt;% 
+  #arrange(member_casual, day_of_week) %&gt;% 
+  ggplot(aes(x = day_of_week, y = number_of_rides, fill = member_casual)) +
+  geom_col(position = &quot;dodge&quot;) + scale_y_continuous(labels = scales::comma) +
+  labs(x = &quot;Day of Week&quot;, y = &quot;Number of Rides&quot;, fill = &quot;Member/Casual&quot;,
+       title = &quot;Average Number of Rides by Day: Members vs. Casual Riders&quot;)</code></pre>
+<p>##Visual for Average Number of rides per month for the Casual Riders</p>
+<pre class="{r}"><code>all_trips_v2 %&gt;% 
+  group_by(month, member_casual) %&gt;% 
+  summarize(number_of_rides = n(), .groups = &#39;drop&#39;) %&gt;% 
+  filter(member_casual == &#39;casual&#39;) %&gt;%
+  drop_na() %&gt;%
+  ggplot(aes(x = month, y = number_of_rides, fill = member_casual)) + 
+  geom_bar(position = &#39;dodge&#39;, stat = &#39;identity&#39;) + scale_y_continuous(labels = scales::comma) +
+  theme(axis.text.x = element_text(angle = 45)) + 
+  labs(x = &quot;Month&quot;, y = &quot;Number of Rides&quot;, 
+       fill = &quot;Member/Casual&quot;,
+       title = &quot;Average Number of Rides by Month: Casual Riders&quot;)</code></pre>
+<p>##Visual for the Top 10 Used Stations by Members</p>
+<pre class="{r}"><code>ggplot(data = top_10_station_member) +
+  geom_col(aes(x = reorder(stations, station_count), y = station_count), fill = &quot;thistle&quot;) +
+  labs(title = &quot;Top 10 Used Stations by Members&quot;, y = &quot;Number of Rides&quot;, x = &quot;&quot;) +
+  scale_y_continuous(labels = scales::comma) +
+  coord_flip() +
+  theme_minimal()
+
+all_stations &lt;- bind_rows(data.frame(&quot;stations&quot; = all_trips_v2$start_station_name, 
+                                     &quot;member_casual&quot; = all_trips_v2$member_casual),
+                          data.frame(&quot;stations&quot; = all_trips_v2$end_station_name,
+                                     &quot;member_casual&quot; = all_trips_v2$member_casual))
+all_stations_v2 &lt;- all_stations[!(all_stations$stations == &quot;&quot; | is.na(all_stations$stations)),]
+all_stations_member &lt;- all_stations_v2[all_stations_v2$member_casual == &#39;member&#39;,]
+all_stations_casual &lt;- all_stations_v2[all_stations_v2$member_casual == &#39;casual&#39;,]</code></pre>
+<h2 id="top-10-popular-stations-all-members-and-casual-riders">Top 10 popular stations all, members, and casual riders</h2>
+<pre class="{r}"><code>top_10_station &lt;- all_stations_v2 %&gt;% 
+  group_by(stations) %&gt;% 
+  summarise(station_count = n()) %&gt;% 
+  arrange(desc(station_count)) %&gt;% 
+  slice(1:10)
+
+top_10_station_member &lt;- all_stations_member %&gt;% 
+  group_by(stations) %&gt;% 
+  summarise(station_count = n()) %&gt;% 
+  arrange(desc(station_count)) %&gt;% 
+  head(n=10)
+
+top_10_station_casual &lt;- all_stations_casual %&gt;% 
+  group_by(stations) %&gt;% 
+  summarise(station_count = n()) %&gt;% 
+  arrange(desc(station_count)) %&gt;% 
+  head(n=10)</code></pre>
+<h2 id="comparing-general-bike-type-preference-between-members-and-casual-riders">Comparing general bike type preference between members and casual riders</h2>
+<pre class="{r}"><code>all_trips_v2 %&gt;% 
+  group_by(rideable_type, member_casual) %&gt;% 
+  summarize(number_of_rides = n(), .groups = &#39;drop&#39;)
+
+all_trips_v2$started_at_hour &lt;- as.POSIXct(all_trips_v2$started_at, &quot;%Y-%m-%d %H:%M&quot;)      
+str(all_trips_v2)
+
+ggplot(data = top_10_station_member) +
+  geom_col(aes(x = reorder(stations, station_count), y = station_count), fill = &quot;thistle&quot;) +
+  labs(title = &quot;Top 10 Used Stations by Members&quot;, y = &quot;Number of Rides&quot;, x = &quot;&quot;) +
+  scale_y_continuous(labels = scales::comma) +
+  coord_flip() +
+  theme_minimal()
+
+ggplot(data = top_10_station_casual) +
+  geom_col(aes(x = reorder(stations, station_count), y = station_count), fill = &quot;lightsalmon&quot;) +
+  labs(title = &quot;Top 10 Used Stations by Casual Riders&quot;, x = &quot;&quot;, y = &quot;Number of Rides&quot;) + 
+  scale_y_continuous(labels = scales::comma) +
+  coord_flip() +
+  theme_minimal()</code></pre>
+<p>##More Analysis</p>
+<pre class="{r}"><code>all_trips_v2 %&gt;%
+  filter(member_casual == &#39;member&#39;) %&gt;%
+  group_by(hour_of_day = hour(round_date(started_at_hour, &#39;hour&#39;))) %&gt;% 
+  group_by(hour_of_day, member_casual) %&gt;% 
+  summarize(number_of_rides = n(), .groups = &#39;drop&#39;) %&gt;% 
+  arrange(-number_of_rides) %&gt;% 
+  ggplot(aes(x = hour_of_day, y = number_of_rides, fill = member_casual)) +
+  geom_bar(position = &#39;dodge&#39;, stat = &#39;identity&#39;) + scale_y_continuous(labels = scales::comma) +
+  scale_x_continuous(breaks = c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23)) +
+  labs(x = &quot;Time of the Day (h)&quot;, y = &quot;Number of Rides&quot;, 
+       fill = &quot;Member/Casual&quot;,
+       title = &quot;Average Number of Rides by Hour: Member Riders&quot;) 
+
+options(repr.plot.width = 14, repr.plot.height = 10)
+all_trips_v2 %&gt;% 
+  group_by(month, member_casual, rideable_type) %&gt;% 
+  summarize(number_of_rides = n(), .groups = &#39;drop&#39;) %&gt;% 
+  drop_na() %&gt;% 
+  ggplot(aes(x = month, y = number_of_rides, fill = member_casual)) +
+  geom_col(position = &quot;dodge&quot;) +
+  scale_y_continuous(labels = scales::comma) +
+  facet_grid(member_casual~rideable_type) +
+  labs(x = &quot;Month&quot;, y = &quot;Number of Rides&quot;, fill = &quot;Member/Casual&quot;,
+       title = &quot;Average Number of Rides by Month&quot;) +
+  theme(axis.text.x = element_text(angle = 90))</code></pre>
+</body>
+</html>
